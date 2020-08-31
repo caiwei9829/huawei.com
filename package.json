@@ -1,12 +1,20 @@
 {
   "name": "huawei.com",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caiwei9829/huawei.com.git"
+  },
+  "bugs": {
+    "url": "https://github.com/caiwei9829/huawei.com/issues"
+  },
+  "homepage": "https://github.com/caiwei9829/huawei.com#readme",
+  "description": ""
 }
