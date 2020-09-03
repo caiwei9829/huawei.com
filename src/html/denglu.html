@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../styles/denglu.css">
     <script src="../styles/font_z5fxqug54ji/iconfont.js"></script>
+    <script src="../js/library/zhuce.js"></script>
 </head>
 
 <body>
@@ -41,17 +42,18 @@
                 <!-- 中间竖线 -->
                 <span></span>
                 <!-- 登陆框 -->
-                <form action="">
-                    <input type="text" id="zhanghao" placeholder="手机号/邮件地址/华为号">
-                    <input type="text" id="mima" placeholder="密码">
+                <form action="../../interface/login.php" method="post">
+                    <input type="text" id="users_phone" placeholder="请输入手机号" name="users_phone">
+                    <input type="text" id="users_password" placeholder="密码" name="users_password">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-yincangmima1"></use>
                       </svg>
                     <a href="javascript:;">短信验证码登陆</a>
                     <!-- 登陆按钮 -->
-                    <a href="javascript:;" id="denglu">
+                    <!-- <a href="javascript:;" id="denglu">
                         <div>登陆</div>
-                    </a>
+                    </a> -->
+                    <input type="submit" value="登陆" id="denglu">
                 </form>
                 <!-- 注册 忘记密码 遇到问题 -->
                 <div id="zhuce">

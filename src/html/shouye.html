@@ -7,6 +7,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="../styles/shouye.css">
     <script src="../styles/font_u080ym02or/iconfont.js"></script>
+    <script src="../js/totality.js" type="module"></script>
+    <!-- <script src="../js/library/slideshow.js" type="module"></script> -->
 </head>
 
 <body>
@@ -44,8 +46,8 @@
                 <!-- 右 -->
                 <ul>
                     <li>
-                        <a href="javascript:;">请登录</a>
-                        <a href="javascript:;">注册</a>
+                        <a href="./denglu.html">请登录</a>
+                        <a href="./zhuce.html">注册</a>
                     </li>
                     <li>
                         <a href="javascript:;">我的订单</a>
@@ -60,7 +62,7 @@
                         <a href="javascript:;">手机版 <span>></span></a>
                     </li>
                     <li>
-                        <a href="javascript:;">
+                        <a href="./shopping.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-gouwuche"></use>
                               </svg> 购物车(0)
@@ -103,8 +105,33 @@
         </div>
         <!-- 轮播 -->
         <div id="lunbo">
-            <div id="main">
-                <div id="centre">
+            <div id="picture">
+                <!-- 轮播图 -->
+                <div class="sliders">
+                    <div class="img-box">
+                        <img src="https://res.vmallres.com/pimages//pages/picImages/92528341489514382529.jpg" alt="" class="active">
+                        <img src="https://res.vmallres.com/pimages//pages/picImages/20119999789519991102.jpg" alt="">
+                        <img src="https://res.vmallres.com/pimages//pages/picImages/38967025489512076983.jpg" alt="">
+                        <img src="https://res.vmallres.com/pimages//pages/picImages/87934804889510843978.jpg" alt="">
+                        <img src="https://res.vmallres.com/pimages//pages/picImages/08328163889516182380.jpg" alt="">
+                    </div>
+                    <div class="btn-left btn">
+                        <span>&lt;</span>
+                    </div>
+
+                    <div class="btn-right btn">
+                        <span>&gt;</span>
+                    </div>
+                    <ol>
+                        <li class="active"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                </div>
+                <!--  -->
+                <div id="centre" class="clear_fix">
                     <div id="menu">
                         <ul>
                             <li>手机<span>></span></li>
@@ -210,24 +237,24 @@
                                     <li>
                                         <a href="javascript:;">
                                             <span>
-                                                <img src="https://res.vmallres.com/pimages//squaredInfo/icon/5/32b46fe090fcab93c1459eae921a2119.png" alt="">
-                                            </span> 优购码
+                                                    <img src="https://res.vmallres.com/pimages//squaredInfo/icon/5/32b46fe090fcab93c1459eae921a2119.png" alt="">
+                                                </span> 优购码
                                         </a>
                                     </li>
                                     <!-- 2 -->
                                     <li>
                                         <a href="javascript:;">
                                             <span>
-                                                <img src="https://res.vmallres.com/pimages//squaredInfo/icon/5/32b46fe090fcab93c1459eae921a2119.png" alt="">
-                                            </span> 更换电池
+                                                    <img src="https://res.vmallres.com/pimages//squaredInfo/icon/5/32b46fe090fcab93c1459eae921a2119.png" alt="">
+                                                </span> 更换电池
                                         </a>
                                     </li>
                                     <!-- 3 -->
                                     <li>
                                         <a href="javascript:;">
                                             <span>
-                                                <img src="https://res.vmallres.com/pimages//squaredInfo/icon/5/32b46fe090fcab93c1459eae921a2119.png" alt="">
-                                            </span>补购保障
+                                                    <img src="https://res.vmallres.com/pimages//squaredInfo/icon/5/32b46fe090fcab93c1459eae921a2119.png" alt="">
+                                                </span>补购保障
                                         </a>
                                     </li>
                                 </ul>
@@ -235,6 +262,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
         <!-- 展示区 -->
@@ -261,95 +289,8 @@
             <!-- 第二排 -->
             <div id="two">
                 <a href="javascript:;" target="_blank"></a>
-                <ul>
-                    <!-- 1 -->
-                    <li>
-                        <a href="javascript:;">
-                            <p>
-                                <img src="https://res0.vmallres.com/pimages//product/6901443398027/428_428_C5B3EEB31BA081CF605FE04A1118DEF332F4C3003CC60ECEmp.png" alt="">
-                            </p>
-                            <p>HUAWEI P40 Pro+</p>
-                            <p>享12期免息</p>
-                            <p>¥7988</p>
-                        </a>
-                    </li>
-                    <!-- 2 -->
-                    <li>
-                        <a href="javascript:;">
-                            <p>
-                                <img src="https://res0.vmallres.com/pimages//product/6901443391967/428_428_3F15B3F159FCB2929091EAD02F81B3E9156F0B2FE71F8433mp.png" alt="">
-                            </p>
-                            <p>荣耀30</p>
-                            <p>最高省400元|12期免息</p>
-                            <p>¥2999</p>
-                        </a>
-                    </li>
-                    <!-- 3 -->
-                    <li>
-                        <a href="javascript:;">
-                            <p>
-                                <img src="https://res0.vmallres.com/pimages//product/6901443353361/428_428_6381399AD1BADEB91EBD63AF4EAE62016C58317DDEB7C5C4mp.png" alt="">
-                            </p>
-                            <p>HUAWEI Mate 30 5G</p>
-                            <p>6期免息|限量赠好礼</p>
-                            <p>¥4499</p>
-                        </a>
-                    </li>
-                    <!-- 4 -->
-                    <li>
-                        <a href="javascript:;">
-                            <p>
-                                <img src="https://res0.vmallres.com/pimages//product/6972453165220/428_428_11B9905C1BEED75A300A7A6B70612208DAA32DE91D8F7372mp.png" alt="">
-                            </p>
-                            <p>荣耀Play4</p>
-                            <p>6400万锐力四摄</p>
-                            <p>¥1999</p>
-                        </a>
-                    </li>
-                    <!-- 5 -->
-                    <li>
-                        <a href="javascript:;">
-                            <p>
-                                <img src="https://res0.vmallres.com/pimages//product/6972453166999/428_428_6FFC78861B766C5598621C14D0FECC7B7A641C64147160D2mp.png" alt="">
-                            </p>
-                            <p>华为麦芒 9</p>
-                            <p>赠华为耳机</p>
-                            <p>¥2399</p>
-                        </a>
-                    </li>
-                    <!-- 6 -->
-                    <li>
-                        <a href="javascript:;">
-                            <p>
-                                <img src="https://res0.vmallres.com/pimages//product/6972453164773/428_428_3350888FD6EA6D30D5F0E99DA3C0D0B15A3BD92523AF0F0Cmp.png" alt="">
-                            </p>
-                            <p>荣耀X10 Max</p>
-                            <p>享12期免息</p>
-                            <p>¥2099</p>
-                        </a>
-                    </li>
-                    <!-- 7 -->
-                    <li>
-                        <a href="javascript:;">
-                            <p>
-                                <img src="https://res0.vmallres.com/pimages//product/6972453164971/428_428_AEEDD8A45E7E18EA7F10E0386C1104EEB994C561C391C803mp.png" alt="">
-                            </p>
-                            <p>华为畅享Z 5G</p>
-                            <p>最高省100+赠耳机</p>
-                            <p>¥2199</p>
-                        </a>
-                    </li>
-                    <!-- 8 -->
-                    <li>
-                        <a href="javascript:;">
-                            <p>
-                                <img src="https://res0.vmallres.com/pimages//product/6901443386451/428_428_E008716749454F878551D09785164FA1DD1742C36857F752mp.png" alt="">
-                            </p>
-                            <p>荣耀 Play4T Pro</p>
-                            <p>领券立减10元</p>
-                            <p>¥1499</p>
-                        </a>
-                    </li>
+                <ul class="list">
+
                 </ul>
             </div>
             <!-- 精品推荐 -->

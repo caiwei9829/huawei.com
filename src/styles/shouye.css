@@ -4,6 +4,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+.clear_fix:after {
+  content: ".";
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  display: block;
+  visibility: hidden;
+}
+.clear_fix {
+  zoom: 1;
+  /* 用来兼容IE6、7 的高度自适应的问题的； */
+}
 .icon {
   width: 1em;
   height: 1em;
@@ -136,33 +148,102 @@
 #container #lunbo {
   width: 100%;
   height: 550px;
-}
-#container #lunbo > #main {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: url(https://res.vmallres.com/pimages//pages/picImages/70285092589519058207.jpg) no-repeat;
-  background-size: 100%;
-  cursor: pointer;
-}
-#container #lunbo > #main > #centre {
-  width: 1200px;
-  margin: 0 auto;
   position: relative;
 }
-#container #lunbo > #main > #centre > #menu {
+#container #lunbo > #picture {
+  width: 100%;
+  height: 550px;
+  cursor: pointer;
+}
+#container #lunbo > #picture .sliders {
+  position: relative;
+  min-width: 1200px;
+  height: 550px;
+  z-index: 1;
+}
+#container #lunbo > #picture .sliders > div {
+  width: 100%;
+  position: absolute;
+}
+#container #lunbo > #picture .sliders > div > img {
+  float: left;
+  display: none;
+  width: 100%;
+  height: 480px;
+}
+#container #lunbo > #picture .sliders > div .active {
+  display: block;
+}
+#container #lunbo > #picture .sliders .btn-left,
+#container #lunbo > #picture .sliders .btn-right {
+  height: 60px;
+  width: 60px;
+  background: #71797F;
+  border-radius: 50%;
+  opacity: 0.3;
+  display: none;
+  cursor: pointer;
+}
+#container #lunbo > #picture .sliders .btn-left span,
+#container #lunbo > #picture .sliders .btn-right span {
+  font-size: 3em;
+  color: white;
+  user-select: none;
+  line-height: 55px;
+}
+#container #lunbo > #picture .sliders .btn-left {
+  top: 42%;
+  left: 27%;
+  text-align: center;
+}
+#container #lunbo > #picture .sliders .btn-right {
+  top: 42%;
+  right: 20%;
+  text-align: center;
+}
+#container #lunbo > #picture .sliders > span:last-of-type {
+  right: 0px;
+}
+#container #lunbo > #picture .sliders > ol {
+  list-style: none;
+  position: absolute;
+  bottom: 100px;
+  right: 46%;
+}
+#container #lunbo > #picture .sliders > ol > li {
+  height: 8px;
+  width: 8px;
+  margin: 5px;
+  background: #B4BABF;
+  float: left;
+  border-radius: 50%;
+}
+#container #lunbo > #picture .sliders .active {
+  background: orange;
+}
+#container #lunbo > #picture > #centre {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+}
+#container #lunbo > #picture > #centre > #menu {
   width: 200px;
   position: absolute;
   top: 18px;
   left: 0;
 }
-#container #lunbo > #main > #centre > #menu > ul {
+#container #lunbo > #picture > #centre > #menu > ul {
   height: 440px;
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 0 0 28px rgba(0, 0, 0, 0.08);
+  position: absolute;
+  left: 120px;
+  z-index: 2;
 }
-#container #lunbo > #main > #centre > #menu > ul > li {
+#container #lunbo > #picture > #centre > #menu > ul > li {
   width: 200px;
   height: 44px;
   list-style: none;
@@ -173,11 +254,11 @@
   line-height: 44px;
   position: relative;
 }
-#container #lunbo > #main > #centre > #menu > ul > li > span {
+#container #lunbo > #picture > #centre > #menu > ul > li > span {
   position: absolute;
   right: 16px;
 }
-#container #lunbo > #main > #centre > #area {
+#container #lunbo > #picture > #centre > #area {
   width: 1200px;
   height: 88px;
   background: #fff;
@@ -186,8 +267,10 @@
   position: absolute;
   left: 0;
   top: 460px;
+  left: 120px;
+  z-index: 2;
 }
-#container #lunbo > #main > #centre > #area > #debark {
+#container #lunbo > #picture > #centre > #area > #debark {
   width: 270px;
   height: 52px;
   padding-left: 26px;
@@ -196,7 +279,7 @@
   border-right: 1px solid #aaa;
   float: left;
 }
-#container #lunbo > #main > #centre > #area > #debark > #head {
+#container #lunbo > #picture > #centre > #area > #debark > #head {
   width: 52px;
   height: 100%;
   margin-right: 17px;
@@ -204,77 +287,77 @@
   background-size: 100%;
   float: left;
 }
-#container #lunbo > #main > #centre > #area > #debark > #welfare {
+#container #lunbo > #picture > #centre > #area > #debark > #welfare {
   float: left;
   width: 147.34px;
   height: 50px;
 }
-#container #lunbo > #main > #centre > #area > #debark > #welfare > #loogin {
+#container #lunbo > #picture > #centre > #area > #debark > #welfare > #loogin {
   width: 100%;
   height: 21px;
   font-size: 14px;
   color: #999;
 }
-#container #lunbo > #main > #centre > #area > #debark > #welfare > #loogin > a {
+#container #lunbo > #picture > #centre > #area > #debark > #welfare > #loogin > a {
   text-decoration: none;
   font-size: 14px;
   color: #333;
 }
-#container #lunbo > #main > #centre > #area > #debark > #welfare > #people {
+#container #lunbo > #picture > #centre > #area > #debark > #welfare > #people {
   width: 100%;
   height: 22px;
   margin-top: 6px;
 }
-#container #lunbo > #main > #centre > #area > #debark > #welfare > #people > a {
+#container #lunbo > #picture > #centre > #area > #debark > #welfare > #people > a {
   width: 68px;
   height: 100%;
   font-size: 13px;
   text-decoration: none;
 }
-#container #lunbo > #main > #centre > #area > #debark > #welfare > #people > a:first-child {
+#container #lunbo > #picture > #centre > #area > #debark > #welfare > #people > a:first-child {
   margin-right: 8px;
   color: #de5b60;
   border: 1px solid #e47b7f;
   border-radius: 5px;
 }
-#container #lunbo > #main > #centre > #area > #debark > #welfare > #people > a:nth-child(2) {
+#container #lunbo > #picture > #centre > #area > #debark > #welfare > #people > a:nth-child(2) {
   background: #595454;
   color: #fde4b3;
   border-radius: 5px;
 }
-#container #lunbo > #main > #centre > #area > #preference {
+#container #lunbo > #picture > #centre > #area > #preference {
   width: 660px;
   height: 64px;
   margin-top: 10px;
   float: left;
 }
-#container #lunbo > #main > #centre > #area > #preference > ul {
+#container #lunbo > #picture > #centre > #area > #preference > ul {
   width: 100%;
   height: 100%;
 }
-#container #lunbo > #main > #centre > #area > #preference > ul > li {
+#container #lunbo > #picture > #centre > #area > #preference > ul > li {
   width: 104px;
   height: 64px;
   list-style: none;
   float: left;
 }
-#container #lunbo > #main > #centre > #area > #preference > ul > li > a {
+#container #lunbo > #picture > #centre > #area > #preference > ul > li > a {
   text-decoration: none;
 }
-#container #lunbo > #main > #centre > #area > #preference > ul > li > a > .ing {
+#container #lunbo > #picture > #centre > #area > #preference > ul > li > a > .ing {
   width: 40px;
   height: 40px;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
 }
-#container #lunbo > #main > #centre > #area > #preference > ul > li > a > .ing > img {
+#container #lunbo > #picture > #centre > #area > #preference > ul > li > a > .ing > img {
   position: absolute;
   width: auto;
   height: auto;
   transform: scale(0.5, 0.5);
 }
-#container #lunbo > #main > #centre > #area > #preference > ul > li > a > .text {
+#container #lunbo > #picture > #centre > #area > #preference > ul > li > a > .text {
   line-height: 24px;
   width: 100%;
   text-align: center;
@@ -284,67 +367,67 @@
   font-size: 12px;
   color: #777;
 }
-#container #lunbo > #main > #centre > #area > #preference > ul > li:first-child img {
+#container #lunbo > #picture > #centre > #area > #preference > ul > li:first-child img {
   top: -20px;
   left: -150px;
 }
-#container #lunbo > #main > #centre > #area > #preference > ul > li:nth-child(2) img {
+#container #lunbo > #picture > #centre > #area > #preference > ul > li:nth-child(2) img {
   top: -20px;
   left: -190px;
 }
-#container #lunbo > #main > #centre > #area > #preference > ul > li:nth-child(3) img {
+#container #lunbo > #picture > #centre > #area > #preference > ul > li:nth-child(3) img {
   top: -20px;
   left: -230px;
 }
-#container #lunbo > #main > #centre > #area > #preference > ul > li:nth-child(4) img {
+#container #lunbo > #picture > #centre > #area > #preference > ul > li:nth-child(4) img {
   top: -20px;
   left: -270px;
 }
-#container #lunbo > #main > #centre > #area > #preference > ul > li:nth-child(5) img {
+#container #lunbo > #picture > #centre > #area > #preference > ul > li:nth-child(5) img {
   top: -20px;
   left: -310px;
 }
-#container #lunbo > #main > #centre > #area > #preference > ul > li:last-child img {
+#container #lunbo > #picture > #centre > #area > #preference > ul > li:last-child img {
   top: -20px;
   left: -350px;
 }
-#container #lunbo > #main > #centre > #area > #notice {
+#container #lunbo > #picture > #centre > #area > #notice {
   width: 268px;
   height: 100%;
   float: left;
   border-left: 1px solid #ccc;
 }
-#container #lunbo > #main > #centre > #area > #notice > #onee {
+#container #lunbo > #picture > #centre > #area > #notice > #onee {
   width: 100%;
   height: 44px;
   border-bottom: 1px solid #ccc;
 }
-#container #lunbo > #main > #centre > #area > #notice > #onee > a:first-child {
+#container #lunbo > #picture > #centre > #area > #notice > #onee > a:first-child {
   display: inline-block;
   width: 28px;
   height: 21px;
   margin: 10px 8px 0 17px;
   text-decoration: none;
 }
-#container #lunbo > #main > #centre > #area > #notice > #onee > a:first-child > span {
+#container #lunbo > #picture > #centre > #area > #notice > #onee > a:first-child > span {
   width: 28px;
   height: 17px;
   font-size: 14px;
   color: #777;
 }
-#container #lunbo > #main > #centre > #area > #notice > #onee > a:last-child {
+#container #lunbo > #picture > #centre > #area > #notice > #onee > a:last-child {
   font-size: 12px;
   color: #6f6f6f;
   text-decoration: none;
 }
-#container #lunbo > #main > #centre > #area > #notice > #toww {
+#container #lunbo > #picture > #centre > #area > #notice > #toww {
   width: 100%;
 }
-#container #lunbo > #main > #centre > #area > #notice > #toww > ul {
+#container #lunbo > #picture > #centre > #area > #notice > #toww > ul {
   width: 100%;
   height: 100%;
 }
-#container #lunbo > #main > #centre > #area > #notice > #toww > ul > li {
+#container #lunbo > #picture > #centre > #area > #notice > #toww > ul > li {
   list-style: none;
   float: left;
   width: 89px;
@@ -352,7 +435,7 @@
   line-height: 42px;
   position: relative;
 }
-#container #lunbo > #main > #centre > #area > #notice > #toww > ul > li > a {
+#container #lunbo > #picture > #centre > #area > #notice > #toww > ul > li > a {
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -361,7 +444,7 @@
   text-align: center;
   text-decoration: none;
 }
-#container #lunbo > #main > #centre > #area > #notice > #toww > ul > li > a > span {
+#container #lunbo > #picture > #centre > #area > #notice > #toww > ul > li > a > span {
   display: inline-block;
   margin-right: 1px;
   position: relative;
@@ -370,21 +453,21 @@
   top: 5px;
   overflow: hidden;
 }
-#container #lunbo > #main > #centre > #area > #notice > #toww > ul > li > a > span > img {
+#container #lunbo > #picture > #centre > #area > #notice > #toww > ul > li > a > span > img {
   position: absolute;
   width: auto;
   height: auto;
   transform: scale(0.5, 0.5);
 }
-#container #lunbo > #main > #centre > #area > #notice > #toww > ul > li:first-child img {
+#container #lunbo > #picture > #centre > #area > #notice > #toww > ul > li:first-child img {
   top: -20px;
   left: -390px;
 }
-#container #lunbo > #main > #centre > #area > #notice > #toww > ul > li:nth-child(2) img {
+#container #lunbo > #picture > #centre > #area > #notice > #toww > ul > li:nth-child(2) img {
   top: -20px;
   left: -410px;
 }
-#container #lunbo > #main > #centre > #area > #notice > #toww > ul > li:last-child img {
+#container #lunbo > #picture > #centre > #area > #notice > #toww > ul > li:last-child img {
   top: -20px;
   left: -430px;
 }
@@ -456,12 +539,12 @@
   background: url(https://res0.vmallres.com/pimages//frontLocation/content/46388204179510288364.png) no-repeat;
   background-size: 100%;
 }
-#container #zhanshi > #two > ul {
+#container #zhanshi > #two > .list {
   width: 968px;
   height: 604px;
   float: left;
 }
-#container #zhanshi > #two > ul > li {
+#container #zhanshi > #two > .list > .item {
   width: 230px;
   height: 290px;
   list-style: none;
@@ -472,45 +555,47 @@
   margin-bottom: 12px;
   margin-top: 0;
 }
-#container #zhanshi > #two > ul > li > a {
+#container #zhanshi > #two > .list > .item > a {
   display: inline-block;
   width: 100%;
   height: 100%;
   text-decoration: none;
 }
-#container #zhanshi > #two > ul > li > a > p:first-child {
+#container #zhanshi > #two > .list > .item > a > .p-picture {
   width: 150px;
   height: 150px;
   margin: 35px auto 0;
 }
-#container #zhanshi > #two > ul > li > a > p:first-child > img {
+#container #zhanshi > #two > .list > .item > a > .p-picture > img {
   width: 100%;
   height: 100%;
 }
-#container #zhanshi > #two > ul > li > a > p:nth-child(2) {
+#container #zhanshi > #two > .list > .item > a > .p-title {
   width: 210px;
   height: 21px;
   margin-top: 12px;
   font-size: 14px;
   text-align: center;
   color: #3a3a3a;
+  overflow: hidden;
 }
-#container #zhanshi > #two > ul > li > a > p:nth-child(3) {
+#container #zhanshi > #two > .list > .item > a > .p-discounts {
   width: 190px;
   height: 18px;
   margin: 2px 20px 7px;
   font-size: 12px;
   text-align: center;
   color: #a4a4a4;
+  overflow: hidden;
 }
-#container #zhanshi > #two > ul > li > a > p:nth-child(4) {
+#container #zhanshi > #two > .list > .item > a > .p-price {
   width: 230px;
   height: 21px;
   font-size: 14px;
   text-align: center;
   color: #d0021b;
 }
-#container #zhanshi > #two > ul > li:hover {
+#container #zhanshi > #two > .list > li:hover {
   box-shadow: 0 2px 26px rgba(0, 0, 0, 0.07);
 }
 #container #zhanshi > #recommend {

@@ -4,7 +4,18 @@
     padding:0;
     box-sizing: border-box;
 }
-
+.clear_fix:after {
+    content: ".";
+    clear: both;
+    height: 0;
+    overflow: hidden;
+    display: block;
+    visibility: hidden;
+  }
+  .clear_fix {
+    zoom: 1;
+    /* 用来兼容IE6、7 的高度自适应的问题的； */
+  }
 .icon {
     width: 1em;
     height: 1em;
@@ -144,263 +155,338 @@
     #lunbo{
         width:100%;
         height:550px;
-        &>#main{
-            display: block;
-            width:100%;
-            height:100%;
-            background:url(https://res.vmallres.com/pimages//pages/picImages/70285092589519058207.jpg)no-repeat;
-            background-size:100%;
+        position: relative;
+            &>#picture{
+                width: 100%;
+                height: 550px;
+                cursor: pointer;
+   // 轮播图
+    .sliders{
+        position: relative;
+        min-width: 1200px;
+        height: 550px;
+        z-index: 1; 
+        // overflow: hidden;
+        >div{
+            width: 100%;
+            position: absolute;
+            >img{
+                float: left;
+                display: none;
+                width: 100%;
+                height: 480px;
+            }
+            .active{
+                display: block;
+            }
+        }
+        .btn-left,.btn-right{
+            height: 60px;
+            width: 60px;
+            background: #71797F;
+            border-radius: 50%;
+            opacity: .3;
+            display: none;
             cursor: pointer;
-            &>#centre{
-                width:1200px;
-                margin:0 auto;
-                position: relative;
-                &>#menu{
-                   width:200px;
-                   position: absolute;
-                   top:18px;
-                   left:0;
-                   &>ul{
-                    height:440px;
-                    border-radius:10px;
-                    cursor:pointer;
-                    box-shadow: 0 0 28px rgba(0,0,0,0.08);
-                    &>li{
-                        width:200px;
-                        height:44px;
-                        list-style: none;
-                        color:#3a3a3a;
-                        padding:0 16px;
-                        font-size:16px;
-                        text-align:left;
-                        line-height: 44px;
-                        position: relative;
-                        &>span{
-                            position: absolute;
-                            right:16px;
-                        }
+                span{
+                    font-size: 3em;
+                    color: white;
+                   
+                    user-select: none;
+                  
+                    line-height: 55px;
                     }
-                   }
-                }
-                // 登陆区域
-                &>#area{
+        }
+        .btn-left{
+            top: 42%;
+            left: 27%;
+            text-align: center;
+        }
+        .btn-right{
+            top: 42%;
+            right: 20%;
+            text-align: center;
+        }
+        &>span:last-of-type{
+            right: 0px;
+        }
+        &>ol{
+            list-style: none;
+            position: absolute;
+            bottom: 100px;
+            right: 46%;
+            &>li{
+                height: 8px;
+                width:8px;
+                margin: 5px;
+                background: #B4BABF;
+                float: left;
+                border-radius: 50%;
+            }
+        }
+        .active{
+            background: orange;
+        }
+    }
+                // 轮播结束
+                &>#centre{
                     width:1200px;
-                    height:88px;
-                    background:#fff;
-                    border-radius:10px;
-                    box-shadow:0 2px 26px rgba(0, 0, 0, .07);
+                    height:100%;
+                    margin:0 auto;
                     position: absolute;
-                    left:0;
-                    top: 460px;
-                    &>#debark{
-                        width:270px;
-                        height:52px;
-                        padding-left:26px;
-                        text-align:left;
-                        margin-top:17px;
-                        border-right:1px solid #aaa;
-                        float: left;
-                        &>#head{
-                            width:52px;
-                            height:100%;
-                            margin-right:17px;
-                            background:url(https://res.vmallres.com/20200731/images/echannel/misc/img_not_logged_in.png)no-repeat;
-                            background-size:100%;
-                            float: left;
-                        }
-                        // 新人福利 会员频道
-                        &>#welfare{
-                            float: left;
-                            width:147.34px;
-                            height:50px;
-                            &>#loogin{
-                                width:100%;
-                                height:21px;
-                                font-size:14px;
-                                color:#999;
-                                &>a{
-                                    text-decoration:none;
-                                    font-size:14px;
-                                    color:#333;
-                                }
-                            }
-                            &>#people{
-                                width:100%;
-                                height:22px;
-                                margin-top:6px;
-                                &>a{
-                                    width:68px;
-                                    height:100%;
-                                    font-size:13px;
-                                    text-decoration:none;
-                                }
-                                &>a:first-child{
-                                    margin-right:8px;
-                                    color:#de5b60;
-                                    border: 1px solid #e47b7f;
-                                    border-radius:5px;
-                                }
-                                &>a:nth-child(2){
-                                    background: #595454;
-                                    color: #fde4b3;
-                                    border-radius: 5px;
-                                }
-                            }
-                        }
-                        
-                    } 
-                     // 企业购物特惠
-                     &>#preference{
-                        width:660px;
-                        height:64px;
-                        margin-top:10px;
-                        float: left;
-                        &>ul{
-                            width:100%;
-                            height:100%;
-                            &>li{
-                                width:104px;
-                                height:64px;
-                                list-style: none;
-                                float: left;
-                                &>a{
-                                    text-decoration:none;
-                                    &>.ing{ 
-                                        width: 40px;
-                                        height: 40px;
-                                        margin: 0 auto;
-                                        overflow: hidden;
-                                        position: relative; 
-                                        &>img{
-                                            position: absolute;
-                                            width: auto;
-                                            height: auto;
-                                            transform: scale(0.5,0.5);
-                                        }                                
-                                    }
-                                    &>.text{
-                                        line-height: 24px;
-                                        width: 100%;
-                                        text-align: center;
-                                        overflow: hidden;
-                                        text-overflow: ellipsis;
-                                        white-space: nowrap;
-                                        font-size:12px;
-                                        color: #777;
-                                    }
-                                }
-                            }
-                            &>li:first-child img{
-                                top: -20px;
-                                left: -150px;
-                            }
-                            &>li:nth-child(2) img{
-                                top: -20px;
-                                left: -190px;
-                            }
-                            &>li:nth-child(3) img{
-                                top: -20px;
-                                left: -230px;
-                            }
-                            &>li:nth-child(4) img{
-                                top: -20px;
-                                left: -270px;
-                            }
-                            &>li:nth-child(5) img{
-                                top: -20px;
-                                left: -310px;
-                            }
-                            &>li:last-child img{
-                                top: -20px;
-                                left: -350px;
-                            }
-                        }
-                    }
-                    // 公告区域
-                    &>#notice{
-                        width:268px;
-                        height:100%;
-                        float: left;
-                        border-left:1px solid #ccc;
-                        &>#onee{
-                            width:100%;
+                    top:0;
+                    &>#menu{
+                       width:200px;
+                       position: absolute;
+                       top:18px;
+                       left:0;
+                       &>ul{
+                        height:440px;
+                        border-radius:10px;
+                        cursor:pointer;
+                        box-shadow: 0 0 28px rgba(0,0,0,0.08);
+                        position: absolute;
+                        left:120px;
+                        z-index: 2;
+                        &>li{
+                            width:200px;
                             height:44px;
-                            border-bottom:1px solid #ccc;
-                            &>a:first-child{
-                                display: inline-block;
-                                width:28px;
-                                height:21px;
-                                margin:10px 8px 0 17px;
-                                text-decoration:none;
-                                &>span{
-                                    width:28px;
-                                    height:17px;
-                                    font-size:14px;
-                                    color:#777;
-                                }
-                            }
-                            &>a:last-child{
-                                font-size:12px;
-                                color:#6f6f6f;
-                                text-decoration:none;
+                            list-style: none;
+                            color:#3a3a3a;
+                            padding:0 16px;
+                            font-size:16px;
+                            text-align:left;
+                            line-height: 44px;
+                            position: relative;
+                            &>span{
+                                position: absolute;
+                                right:16px;
                             }
                         }
-                        &>#toww{
-                            width:100%;
+                       }
+                    }
+                    // 登陆区域
+                    &>#area{
+                        width:1200px;
+                        height:88px;
+                        background:#fff;
+                        border-radius:10px;
+                        box-shadow:0 2px 26px rgba(0, 0, 0, .07);
+                        position: absolute;
+                        left:0;
+                        top: 460px;
+                        left: 120px;
+                        z-index: 2;
+                        &>#debark{
+                            width:270px;
+                            height:52px;
+                            padding-left:26px;
+                            text-align:left;
+                            margin-top:17px;
+                            border-right:1px solid #aaa;
+                            float: left;
+                            &>#head{
+                                width:52px;
+                                height:100%;
+                                margin-right:17px;
+                                background:url(https://res.vmallres.com/20200731/images/echannel/misc/img_not_logged_in.png)no-repeat;
+                                background-size:100%;
+                                float: left;
+                            }
+                            // 新人福利 会员频道
+                            &>#welfare{
+                                float: left;
+                                width:147.34px;
+                                height:50px;
+                                &>#loogin{
+                                    width:100%;
+                                    height:21px;
+                                    font-size:14px;
+                                    color:#999;
+                                    &>a{
+                                        text-decoration:none;
+                                        font-size:14px;
+                                        color:#333;
+                                    }
+                                }
+                                &>#people{
+                                    width:100%;
+                                    height:22px;
+                                    margin-top:6px;
+                                    &>a{
+                                        width:68px;
+                                        height:100%;
+                                        font-size:13px;
+                                        text-decoration:none;
+                                    }
+                                    &>a:first-child{
+                                        margin-right:8px;
+                                        color:#de5b60;
+                                        border: 1px solid #e47b7f;
+                                        border-radius:5px;
+                                    }
+                                    &>a:nth-child(2){
+                                        background: #595454;
+                                        color: #fde4b3;
+                                        border-radius: 5px;
+                                    }
+                                }
+                            }
+                            
+                        } 
+                         // 企业购物特惠
+                         &>#preference{
+                            width:660px;
+                            height:64px;
+                            margin-top:10px;
+                            float: left;
                             &>ul{
                                 width:100%;
                                 height:100%;
                                 &>li{
+                                    width:104px;
+                                    height:64px;
                                     list-style: none;
                                     float: left;
-                                    width:89px;
-                                    height:42px;
-                                    line-height: 42px;
-                                    position: relative;
                                     &>a{
-                                        display: inline-block;
-                                        width:100%;
-                                        height:100%;
-                                        font-size:12px;
-                                        color:#666;
-                                        text-align: center;
                                         text-decoration:none;
-                                        &>span{
-                                            display: inline-block;
-                                            margin-right:1px;
-                                            position: relative;
-                                            width:20px;
-                                            height:20px;
-                                            top:5px;
+                                        &>.ing{ 
+                                            width: 40px;
+                                            height: 40px;
+                                            margin: 0 auto;
                                             overflow: hidden;
+                                            position: relative; 
                                             &>img{
                                                 position: absolute;
                                                 width: auto;
                                                 height: auto;
                                                 transform: scale(0.5,0.5);
-                                            }
+                                            }                                
+                                        }
+                                        &>.text{
+                                            line-height: 24px;
+                                            width: 100%;
+                                            text-align: center;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            white-space: nowrap;
+                                            font-size:12px;
+                                            color: #777;
                                         }
                                     }
                                 }
                                 &>li:first-child img{
                                     top: -20px;
-                                    left: -390px;
+                                    left: -150px;
                                 }
                                 &>li:nth-child(2) img{
                                     top: -20px;
-                                    left: -410px;
+                                    left: -190px;
+                                }
+                                &>li:nth-child(3) img{
+                                    top: -20px;
+                                    left: -230px;
+                                }
+                                &>li:nth-child(4) img{
+                                    top: -20px;
+                                    left: -270px;
+                                }
+                                &>li:nth-child(5) img{
+                                    top: -20px;
+                                    left: -310px;
                                 }
                                 &>li:last-child img{
                                     top: -20px;
-                                    left: -430px;
+                                    left: -350px;
+                                }
+                            }
+                        }
+                        // 公告区域
+                        &>#notice{
+                            width:268px;
+                            height:100%;
+                            float: left;
+                            border-left:1px solid #ccc;
+                            &>#onee{
+                                width:100%;
+                                height:44px;
+                                border-bottom:1px solid #ccc;
+                                &>a:first-child{
+                                    display: inline-block;
+                                    width:28px;
+                                    height:21px;
+                                    margin:10px 8px 0 17px;
+                                    text-decoration:none;
+                                    &>span{
+                                        width:28px;
+                                        height:17px;
+                                        font-size:14px;
+                                        color:#777;
+                                    }
+                                }
+                                &>a:last-child{
+                                    font-size:12px;
+                                    color:#6f6f6f;
+                                    text-decoration:none;
+                                }
+                            }
+                            &>#toww{
+                                width:100%;
+                                &>ul{
+                                    width:100%;
+                                    height:100%;
+                                    &>li{
+                                        list-style: none;
+                                        float: left;
+                                        width:89px;
+                                        height:42px;
+                                        line-height: 42px;
+                                        position: relative;
+                                        &>a{
+                                            display: inline-block;
+                                            width:100%;
+                                            height:100%;
+                                            font-size:12px;
+                                            color:#666;
+                                            text-align: center;
+                                            text-decoration:none;
+                                            &>span{
+                                                display: inline-block;
+                                                margin-right:1px;
+                                                position: relative;
+                                                width:20px;
+                                                height:20px;
+                                                top:5px;
+                                                overflow: hidden;
+                                                &>img{
+                                                    position: absolute;
+                                                    width: auto;
+                                                    height: auto;
+                                                    transform: scale(0.5,0.5);
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &>li:first-child img{
+                                        top: -20px;
+                                        left: -390px;
+                                    }
+                                    &>li:nth-child(2) img{
+                                        top: -20px;
+                                        left: -410px;
+                                    }
+                                    &>li:last-child img{
+                                        top: -20px;
+                                        left: -430px;
+                                    }
                                 }
                             }
                         }
                     }
                 }
             }
-        }
-    }
+ }
+            
     // 展示区
     #zhanshi{
         width:100%;
@@ -471,11 +557,11 @@
                 background:url(https://res0.vmallres.com/pimages//frontLocation/content/46388204179510288364.png)no-repeat;
                 background-size:100%;
             }
-            &>ul{
+            &>.list{
                 width:968px;
                 height:604px;
                 float: left;
-                &>li{
+                &>.item{
                     width:230px;
                     height:290px;
                     list-style: none;
@@ -490,7 +576,7 @@
                         width:100%;
                         height:100%;
                         text-decoration:none;
-                        &>p:first-child{
+                        &>.p-picture{
                             width:150px;
                             height:150px;
                             margin:35px auto 0;
@@ -499,23 +585,25 @@
                                 height:100%;
                             }
                         }
-                        &>p:nth-child(2){
+                        &>.p-title{
                             width:210px;
                             height:21px;
                             margin-top:12px;
                             font-size:14px;
                             text-align:center;
                             color:#3a3a3a;
+                            overflow: hidden;
                         }
-                        &>p:nth-child(3){
+                        &>.p-discounts{
                             width:190px;
                             height:18px;
                             margin:2px 20px 7px;
                             font-size:12px;
                             text-align:center;
                             color:#a4a4a4;
+                            overflow: hidden;
                         }
-                        &>p:nth-child(4){
+                        &>.p-price{
                             width:230px;
                             height:21px;
                             font-size:14px;
